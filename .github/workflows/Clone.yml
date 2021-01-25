@@ -1,21 +1,12 @@
 name: clone workflow
-
-
 on:
-
   workflow_dispatch:
-
-
 jobs:
-
   job_one:
     name: Clone
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: clone testing
-
+      - name: testing
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
@@ -24,4 +15,4 @@ jobs:
           port: ${{secrets.PORT}}
           script: |
             cd ../pub
-            git clone git@github.com:rongmd/rongmd.github.io.git
+            git clone https://github.com/rongmd/rongmd.github.io.git
